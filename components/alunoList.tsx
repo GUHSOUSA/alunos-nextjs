@@ -96,6 +96,7 @@ export const AlunosList = ({
     <TableRow>
       <TableHead className="w-[100px]">Id</TableHead>
       <TableHead>Nome</TableHead>
+      <TableHead>Idade</TableHead>
       <TableHead>Nota 1</TableHead>
       <TableHead>Nota 2</TableHead>
       <TableHead >Nota final</TableHead>
@@ -112,6 +113,7 @@ export const AlunosList = ({
 
       <TableCell className="font-medium">{items.id}</TableCell>
       <TableCell>{items.nome}</TableCell>
+      <TableCell>{items.idade}</TableCell>
       <TableCell>{items.nota1}</TableCell>
       <TableCell>{items.nota2}</TableCell>
       <TableCell>{calculateAverage(items)}</TableCell>
@@ -136,22 +138,22 @@ export const AlunosList = ({
                   <Input id="name" value={nome} onChange={(e) => setNome(e.target.value)} className="col-span-3" />
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="username"  className="text-right">
+                  <Label htmlFor="idade"  className="text-right">
                     Idade
                   </Label>
-                  <Input id="idade" value={idade} onChange={(e) => setidade(e.target.value)} className="col-span-3" />
+                  <Input type='number' id="idade" value={idade} onChange={(e) => setidade(e.target.value)} className="col-span-3" />
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="name" className="text-right">
+                  <Label htmlFor="nota1" className="text-right">
                     Nota 1
                   </Label>
-                  <Input id="nota1" value={nota1} onChange={(e) => setnota1(e.target.value)} className="col-span-3" />
+                  <Input type='number' id="nota1" value={nota1} onChange={(e) => setnota1(e.target.value)} className="col-span-3" />
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="name" className="text-right">
+                  <Label htmlFor="nota2" className="text-right">
                     Nota 2
                   </Label>
-                  <Input id="nota2" onChange={(e) => setnota2(e.target.value)} value={nota2} className="col-span-3" />
+                  <Input type='number' id="nota2" onChange={(e) => setnota2(e.target.value)} value={nota2} className="col-span-3" />
                 </div>
               </div>
               <DialogFooter>
